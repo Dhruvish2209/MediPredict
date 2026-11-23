@@ -1,0 +1,22 @@
+Symptoms reported,Model,Top-1 accuracy,Top-3 accuracy
+2,XGBoost,0.649,0.768
+2,Profile (Naive Bayes),0.725,0.907
+2,Ensemble (used in app),0.804,0.949
+3,XGBoost,0.757,0.84
+3,Profile (Naive Bayes),0.854,0.975
+3,Ensemble (used in app),0.925,0.988
+4,XGBoost,0.797,0.865
+4,Profile (Naive Bayes),0.9,0.987
+4,Ensemble (used in app),0.961,0.998
+5,XGBoost,0.834,0.887
+5,Profile (Naive Bayes),0.922,0.994
+5,Ensemble (used in app),0.98,0.999
+6,XGBoost,0.874,0.916
+6,Profile (Naive Bayes),0.939,0.996
+6,Ensemble (used in app),0.993,1.0
+8,XGBoost,0.917,0.948
+8,Profile (Naive Bayes),0.948,0.999
+8,Ensemble (used in app),0.999,1.0
+10,XGBoost,0.963,0.974
+10,Profile (Naive Bayes),0.949,0.999
+10,Ensemble (used in app),1.0,1.0

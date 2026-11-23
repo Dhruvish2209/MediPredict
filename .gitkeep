@@ -1,0 +1,2 @@
+mkdir -p models reports/shap data/processed
+touch models/.gitkeep reports/.gitkeep reports/shap/.gitkeep data/processed/.gitkeep

@@ -1,0 +1,6 @@
+Model,Accuracy,Precision (macro),Recall (macro),F1 (macro),F1 (weighted),ROC-AUC (macro),Train Time (s)
+Logistic Regression,1.0,1.0,1.0,1.0,1.0,1.0,0.11
+Random Forest,1.0,1.0,1.0,1.0,1.0,1.0,0.34
+XGBoost,1.0,1.0,1.0,1.0,1.0,1.0,2.66
+SVM (RBF),1.0,1.0,1.0,1.0,1.0,1.0,0.81
+KNN (k=5),1.0,1.0,1.0,1.0,1.0,1.0,0.01

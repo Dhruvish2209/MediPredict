@@ -1,0 +1,3 @@
+Model,Accuracy,F1 (macro),F1 (weighted),ROC-AUC (macro)
+XGBoost (tuned),1.0,1.0,1.0,1.0
+Random Forest (tuned),1.0,1.0,1.0,1.0

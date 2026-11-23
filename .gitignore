@@ -1,0 +1,53 @@
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Dataset files (too large for git - keep Kaggle links in SOURCES.md).
+# The app does NOT need them at runtime: app/assets/ holds the small derived files.
+data/raw/*.csv
+data/processed/*.csv
+
+# Trained models: the app needs them at runtime, so they are committed (~4 MB).
+# Uncomment the next two lines if you prefer to regenerate them from the notebooks.
+# models/*.pkl
+# models/*.joblib
+
+# Database runtime state
+database/*.db
+*.sqlite3
+
+# Local captures, temporary demo data and generated deliverables
+tmp/
+output/
+MediPredict.txt
+
+# Secrets
+.env
+*.env
+secrets.json
+
+# Generated reports (the PNGs/CSVs are shown on the Model Insights page, so they stay in git)
+reports/*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Keep empty folder structure in git
+!**/.gitkeep

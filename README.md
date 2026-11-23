@@ -1,11 +1,11 @@
-# 🩺 MediPredict
+# MediPredict
 
 An explainable AI health-screening app built with Streamlit. Describe symptoms in plain words, or enter lab values, and get a
 risk estimate **together with an explanation of what drove it**.
 
 > Educational project. Not a medical device and not a substitute for a clinician.
 
-## ✨ Features
+## Features
 
 | Area | What you get |
 | --- | --- |
@@ -18,7 +18,7 @@ risk estimate **together with an explanation of what drove it**.
 | **Model Insights** | How it works, metrics, ROC/confusion matrices, global SHAP, robustness tests, honest limitations |
 | **UI** | Custom design system, light/dark aware, responsive down to phones, Material icons |
 
-## 🚀 Quick start
+## Quick start
 
 **Windows PowerShell** (choose a Python version installed on your computer):
 
@@ -47,13 +47,13 @@ The demo seeder creates a sample doctor account directly; keep demo accounts and
 
 Your existing `database/medipredict.db` keeps working: new columns/tables are added automatically on first start.
 
-## 🧪 Tests
+## Tests
 
 ```bash
 pytest -q tests          # 19 tests: NLP, SHAP additivity, auth, DB migration, PDFs, every chart builder
 ```
 
-## 🔧 What changed in the backend (and why)
+## What changed in the backend (and why)
 
 1. **SHAP was producing all zeros.** The old code used the *single row being explained* as the SHAP background, so every
    feature already equalled its "average". The new `shap_utils.py` uses a stratified sample of the real training data and
@@ -76,7 +76,7 @@ pytest -q tests          # 19 tests: NLP, SHAP additivity, auth, DB migration, P
    reference percentiles, symptom profiles, descriptions/precautions), so the app deploys without the large CSVs.
 8. **Dependency fix:** the models were pickled with scikit-learn **1.7.2**, but `requirements.txt` pinned 1.3.2. Now corrected.
 
-## 🗂️ Structure
+## Structure
 
 ```
 app/
@@ -98,27 +98,27 @@ models/ reports/ notebooks/ data/   (unchanged)
 **Add another disease model:** train it, save `{name}_model/scaler/imputer/features/model_name.pkl` in `models/`, add a
 `DiseaseSpec` in `utils/schemas.py`, run `scripts/build_assets.py`, and add a one-line page like `views/heart.py`.
 
-## ☁️ Deploying (Streamlit Cloud)
+## Deploying (Streamlit Cloud)
 
 Commit `models/*.pkl`, `reports/*.png|csv` and `app/assets/` (the `.gitignore` already allows them), set `DOCTOR_INVITE_CODE`
 in the app's secrets/environment, and point the app at `app/main.py`. SQLite on Streamlit Cloud is ephemeral: for persistent
 data mount a volume and set `MEDIPREDICT_DB`, or move to a hosted database.
 
-## 🩹 Troubleshooting
+## Troubleshooting
 
 - **Plotly `ValueError: Invalid property ... 'cornerradius'`:** fixed in this version (code now works on Plotly 5.18 and newer).
 - **Model-loading warnings:** keep the pinned `scikit-learn==1.7.2` (the models were saved with it). XGBoost prints a harmless
   "serialized model" notice when unpickling.
 - **Fonts/icons look plain offline:** the UI loads Inter / Plus Jakarta Sans from Google Fonts; without internet it falls back to system fonts.
 
-## ⚠️ Known limitations
+## Known limitations
 
 - Models are trained on small public datasets and are not clinically validated; the PIMA data covers women of Pima heritage.
 - The symptom dataset is synthetic (fixed symptom sets per disease), so very high accuracies there don't transfer to real patients.
 - Streamlit sessions are per-browser-tab: a full page reload signs you out (use the sidebar to navigate).
 - Probabilities from SVM/LR are model scores, not calibrated clinical risks.
 
-## 📦 Datasets
+## Datasets
 
 See `data/raw/SOURCES.md`. Kaggle: disease-symptom description (4,920 rows), PIMA Indians Diabetes (768),
 Heart Failure Prediction (918), Indian Liver Patient (583).
